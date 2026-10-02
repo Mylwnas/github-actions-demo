@@ -1,0 +1,22 @@
+name: GitHub Actions Demo
+
+run-name: ${{ github.actor }} is testing GitHub Actions
+
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "The workflow started automatically after a push."
+
+      - run: echo "This job is running on a GitHub server."
+
+      - name: Download repository code
+        uses: actions/checkout@v6
+
+      - name: List repository files
+        run: ls
+
+      - run: echo "The job status is ${{ job.status }}."
